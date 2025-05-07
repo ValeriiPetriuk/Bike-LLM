@@ -1,0 +1,24 @@
+
+services:
+  neo4j:
+    image: neo4j:latest
+    volumes:
+      - data:/data
+      - logs:/logs
+    environment:
+      - NEO4J_AUTH=neo4j/password
+    ports:
+      - "7474:7474"
+      - "7687:7687"
+    restart: always
+
+  bike_neo4j_etl:
+    build:
+      context: ./bike_neo4j_etl
+    env_file:
+      - .env
+    depends_on:
+      - neo4j
+volumes:
+  data:
+  logs:
