@@ -91,7 +91,7 @@ def load_bicycle_store_graph_from_csv() -> None:
                brand: row.brand,
                product_line: row.productLine,
                product_size: row.productSize,
-               price: row.listPrice
+               price: toFloat(row.listPrice)
            }})
          """
         _ = session.run(query, {})
@@ -103,8 +103,8 @@ def load_bicycle_store_graph_from_csv() -> None:
            FROM '{TRANSACTIONS_CSV_PATH}' AS row
            MERGE (t:Transaction {{
                transaction_id: toInteger(row.transactionId),
-               date: row.transactionDate,
-               online_order: row.onlineOrder,
+               date: date(row.transactionDate),
+               online_order: toBoolean(row.onlineOrder),
                status: row.orderStatus
            }})
 
