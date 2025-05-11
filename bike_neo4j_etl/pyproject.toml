@@ -2,8 +2,8 @@
 name = "bike_neo4j_etl"
 version = "0.1"
 dependencies = [
-   "neo4j",
-   "retry"
+   "neo4j==5.28.1",
+   "retry==0.9.2"
 ]
 
 [project.optional-dependencies]

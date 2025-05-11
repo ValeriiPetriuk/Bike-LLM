@@ -1,0 +1,23 @@
+[project]
+name = "chatbot_api"
+version = "0.1"
+dependencies = [
+    "asyncio==3.4.3",
+    "fastapi==0.115.12",
+    "langchain==0.3.25",
+    "langchain-openai==0.3.16",
+    "langchainhub==0.1.21",
+    "langchain-neo4j==0.4.0",
+    "langchain-huggingface==0.2.0",
+    "neo4j==5.28.1",
+    "numpy==2.2.5",
+    "openai==1.77.0",
+    "opentelemetry-api==1.32.1",
+    "pydantic==2.11.4",
+    "uvicorn==0.34.2",
+    "langchain-community==0.3.23",
+    "sentence-transformers==4.1.0"
+]
+
+[project.optional-dependencies]
+dev = ["black", "flake8"]

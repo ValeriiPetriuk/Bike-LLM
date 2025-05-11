@@ -1,24 +1,49 @@
-
 services:
-  neo4j:
-    image: neo4j:latest
-    volumes:
-      - data:/data
-      - logs:/logs
-    environment:
-      - NEO4J_AUTH=neo4j/password
-    ports:
-      - "7474:7474"
-      - "7687:7687"
-    restart: always
+#  bike_neo4j_etl:
+#    build:
+#      context: ./bike_neo4j_etl
+#    env_file:
+#      - .env
 
-  bike_neo4j_etl:
+  chatbot_api:
     build:
-      context: ./bike_neo4j_etl
+      context: ./chatbot_api
     env_file:
       - .env
-    depends_on:
-      - neo4j
-volumes:
-  data:
-  logs:
+#    depends_on:
+#      - bike_neo4j_etl
+    ports:
+      - "8000:8000"
+
+
+#volumes:
+#  data:
+#  logs:
+
+
+#services:
+#  neo4j:
+#    image: neo4j:latest
+#    volumes:
+#      - data:/data
+#      - logs:/logs
+#    environment:
+#      - NEO4J_AUTH=neo4j/password
+#      - NEO4JLABS_PLUGINS=["apoc"]
+#      - NEO4J_dbms_security_procedures_unrestricted=apoc.*
+#      - NEO4J_dbms_security_procedures_allowlist=apoc.meta.data,apoc.meta.schema
+#    ports:
+#      - "7474:7474"
+#      - "7687:7687"
+#    restart: always
+#
+#  bike_neo4j_etl:
+#    build:
+#      context: ./bike_neo4j_etl
+#    env_file:
+#      - .env
+#    depends_on:
+#      - neo4j
+#volumes:
+#  data:
+#  logs:
