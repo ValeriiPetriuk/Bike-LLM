@@ -77,22 +77,7 @@ customer_vector_chain = RetrievalQA.from_chain_type(
 
 customer_vector_chain.combine_documents_chain.llm_chain.prompt = customer_prompt
 
-# transaction_prompt = ChatPromptTemplate.from_messages([
-#     SystemMessagePromptTemplate(
-#         prompt=PromptTemplate(input_variables=["context"], template=transaction_template)
-#     ),
-#     HumanMessagePromptTemplate(
-#         prompt=PromptTemplate(input_variables=["question"], template="{question}")
-#     ),
-# ])
-#
-# transaction_vector_chain = RetrievalQA().from_chain_type(
-#     llm=ChatOpenAI(model=BIKE_QA_MODEL, temperature=0),
-#     chain_type="stuff",
-#     retriever=neo4j_vector_index.as_retriever(k=10),
-# )
-#
-# transaction_vector_chain.combine_documents_chain.llm_chain.prompt = transaction_prompt
+
 
 
 

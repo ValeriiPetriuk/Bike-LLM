@@ -4,3 +4,4 @@ venv/
 chatbot_api.egg-info/
 __pycache__/
 build/
+certs/
