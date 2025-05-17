@@ -1,10 +1,10 @@
 import os
 import requests
 import streamlit as st
-from streamlit_jwt_authenticator import Authenticator
 
-CHATBOT_URL = os.getenv("CHATBOT_URL", "http://localhost:8000/bike-rag-agent")
-LOGIN_URL = "http://chatbot_api:8000/user/login"
+
+CHATBOT_URL = os.getenv("CHATBOT_URL")
+LOGIN_URL = os.getenv("LOGIN_URL")
 if "token" not in st.session_state:
     st.session_state.token = None
 

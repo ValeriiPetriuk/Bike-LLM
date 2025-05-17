@@ -3,8 +3,7 @@ name = "chatbot_frontend"
 version = "0.1"
 dependencies = [
    "requests==2.32.3",
-   "streamlit==1.45.0",
-   "streamlit-jwt-authenticator==0.0.2"
+   "streamlit==1.45.0"
 ]
 
 [project.optional-dependencies]
